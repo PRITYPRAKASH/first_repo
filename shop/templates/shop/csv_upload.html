@@ -1,0 +1,21 @@
+{% extends "admin/csv_upload.html" %}
+{% load i18n admin_urls admin_static admin_list %}
+
+{% block object-tools %}
+    {% if has_add_permission %}
+        <div>
+            <ul class="object-tools">
+                {% block object-tools-items %}
+                    <form id="upload-csv-form" action="{% url 'admin:upload_csv' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <p>{{ form.non_field_errors }}</p>
+                        <p>{{ submit_csv_form.as_p }}</p>
+                        <p>{{ submit_csv_form.csv_file.errors }}</p>
+                        <p><input type="submit" value="Upload" />
+                            <input type="reset" value="Reset"></p>
+                    </form>
+                {% endblock %}
+            </ul>
+        </div>
+     {% endif %}
+{% endblock %}

@@ -1,0 +1,3 @@
+wps_header,emp_record_type,emp_prl_id,emp_UID,emp_name
+wps_year,wps_month,Division,com_record_type,com_UID,com_bnk_name,com_Bnk_Routing_Code
+2020,0,,SCR,,test,
